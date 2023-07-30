@@ -21,11 +21,11 @@ function compareMove(player,cpu){
     if(player===cpu){
         console.log("Draw");
         draw++;
-        $(".results").text("Draw!");
+        $(".results").text("Draw.");
     }
     else if(player=="rock" && cpu=="paper"){
         console.log("CPU win");
-        $(".results").text("You Loose!");
+        $(".results").text("You Loose.");
         cpuScore++;
     }
     else if(player=="rock" && cpu=="sissors"){
@@ -40,12 +40,12 @@ function compareMove(player,cpu){
     }
     else if(player=="paper" && cpu=="sissors"){
         console.log("CPU win");
-        $(".results").text("You Loose");
+        $(".results").text("You Loose.");
         cpuScore++;
     }
     else if(player=="sissors" && cpu=="rock"){
         console.log("CPU win");
-        $(".results").text("You Loose!");
+        $(".results").text("You Loose.");
         cpuScore++;
     }
     else if(player=="sissors" && cpu=="paper"){
