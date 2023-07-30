@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+body{
+    background-color: rgb(36, 36, 36);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.container-1{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.results{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+.button{
+    border: 0;
+    background-color: white;
+    color:  rgb(36, 36, 36);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    display: inline;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.btn{
+    height: 195px;
+    width: 195px;
+    font-size: 6.5rem;
+    text-align: center;
+    border-radius: 50%;
+    border: 5px solid white;
+    cursor: pointer;   
+}
+
+.score{
+    border: 2px solid white;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.container-2{
+width: 40%;
+margin-left: 30%;
+
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+@media (max-width:1072px) {
+    h1{
+        color: white;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+
+    .btn{
+        height: 80px;
+        width: 80px;
+        font-size: 2.8rem;
+        text-align: center;
+        border-radius: 50%;
+        border: 5px solid white;
+        cursor: pointer;   
+    }
+
+    .results{
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .score{
+        border: 2px solid white;
+        width: 90%;
+        margin-left: 5%;
+        text-align: center;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+    .container-2{
+        width: 100%;
+        margin: 0;
+        }
+    p{
+        font-size: 1rem;
+        }
+
+    .button{
+        border: 0;
+        background-color: white;
+        color:  rgb(36, 36, 36);
+        font-size: 1rem;
+        font-weight: bolder;
+        display: inline;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    
+}
