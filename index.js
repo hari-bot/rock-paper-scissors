@@ -1,7 +1,11 @@
 var moves=["rock","paper","sissors"];
-var playerScore=0;
-var cpuScore=0;
-var draw=0;
+
+var score=JSON.parse(localStorage.getItem('score'))||{
+    playerScore:0,
+    cpuScore:0,
+    draw:0
+};
+$(".game-results").text("Wins: "+score.playerScore+", Looses: "+score.cpuScore+", Ties: "+score.draw);
 
 $(".btn").on("click",function(){   
     var userChoice=$(this).attr('id');
@@ -20,50 +24,53 @@ function computerMove(){
 function compareMove(player,cpu){
     if(player===cpu){
         console.log("Draw");
-        draw++;
-        $(".results").text("Draw.");
+        score.draw++;
+        $(".results").text("Draw!");
     }
     else if(player=="rock" && cpu=="paper"){
         console.log("CPU win");
-        $(".results").text("You Loose.");
-        cpuScore++;
+        $(".results").text("You Loose!");
+        score.cpuScore++;
     }
     else if(player=="rock" && cpu=="sissors"){
         console.log("player win");
         $(".results").text("You Win!");
-        playerScore++;
+        score.playerScore++;
     }
     else if(player=="paper" && cpu=="rock"){
         console.log("player win");
         $(".results").text("You Win!");
-        playerScore++;
+        score.playerScore++;
     }
     else if(player=="paper" && cpu=="sissors"){
         console.log("CPU win");
-        $(".results").text("You Loose.");
-        cpuScore++;
+        $(".results").text("You Loose");
+        score.cpuScore++;
     }
     else if(player=="sissors" && cpu=="rock"){
         console.log("CPU win");
-        $(".results").text("You Loose.");
-        cpuScore++;
+        $(".results").text("You Loose!");
+        score.cpuScore++;
     }
     else if(player=="sissors" && cpu=="paper"){
         console.log("player win");
         $(".results").text("You Win!");
-        playerScore++;
+        score.playerScore++;
     }
     else{
         console.log("Coding In Progress...")
     }
-    $(".game-results").text("Wins: "+playerScore+", Looses: "+cpuScore+", Ties: "+draw);
+    $(".game-results").text("Wins: "+score.playerScore+", Looses: "+score.cpuScore+", Ties: "+score.draw);
+
+    localStorage.setItem('score',JSON.stringify(score));
 }
 
 $(".button").on("click",function(){
-    playerScore=0;
-    cpuScore=0;
-    draw=0;
-    $(".game-results").text("Wins: "+playerScore+", Looses: "+cpuScore+", Ties: "+draw);
+    score.playerScore=0;
+    score.cpuScore=0;
+    score.draw=0;
+    localStorage.removeItem('score');
+    $(".game-results").text("Wins: "+score.playerScore+", Looses: "+score.cpuScore+", Ties: "+score.draw);
     $(".results").text("Click To Play!");
     $(".verses").text("You: Nan || Computer: Nan");
 });
